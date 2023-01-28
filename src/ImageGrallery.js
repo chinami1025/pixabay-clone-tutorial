@@ -1,13 +1,17 @@
 import React from "react";
-import "./ImageGralley.css";
+import "./imageGrallery.css";
 
-const ImageGrallery = () => {
+const ImageGrallery = ({ fetchDate }) => {
   return (
     <div>
       <div className="images-wrapper">
-        <div className="image">
-          <img src="" alt="" />
-        </div>
+        {fetchDate.map((date) => (
+          <div className="image" key={date.id}>
+            <a href={date.pageURL} target="_blank">
+              <img src={date.largeImageURL} alt="" />
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
